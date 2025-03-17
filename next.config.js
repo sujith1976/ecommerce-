@@ -1,7 +1,8 @@
-import type { NextConfig } from 'next';
-import path from 'path';
+/** @type {import('next').NextConfig} */
+// eslint-disable-next-line import/no-commonjs
+const path = require('path');
 
-const nextConfig: NextConfig = {
+const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   webpack: (config) => {
@@ -13,4 +14,4 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default nextConfig; 
+module.exports = nextConfig; 
