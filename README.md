@@ -1,36 +1,80 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Product Catalog with CSV Import
 
-## Getting Started
+A semi-ecommerce website that allows importing product details from CSV files and displays them in an organized manner. Built with Next.js, PostgreSQL (NeonDB), and Prisma.
 
-First, run the development server:
+## Features
 
+- CSV file upload and import
+- Hierarchical product display (Category > Subcategory > Products)
+- Support for special CSV rules (filled cells, empty cells, and dashes)
+- Datasheet URL integration
+- Responsive and modern UI
+- PostgreSQL database with Prisma ORM
+
+## Prerequisites
+
+- Node.js 18.x or later
+- PostgreSQL database (NeonDB recommended)
+- npm or yarn package manager
+
+## Setup
+
+1. Clone the repository:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone <repository-url>
+cd <repository-name>
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Set up your environment variables:
+   - Copy `.env.example` to `.env`
+   - Update the `DATABASE_URL` with your NeonDB connection string
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Initialize the database:
+```bash
+npx prisma db push
+```
 
-## Learn More
+5. Start the development server:
+```bash
+npm run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+The application will be available at `http://localhost:3000`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## CSV Format
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The CSV file should follow these rules:
+- Each row represents a product
+- Required columns:
+  - Category
+  - Subcategory
+  - PartNumber
+  - DatasheetURL (optional)
+- Additional columns represent product attributes
+- Cell values:
+  - Filled cell: Product is associated with that attribute
+  - Empty cell: Product is not associated with that attribute
+  - Dash (-): Product is associated with that attribute (alternative to filled cell)
 
-## Deploy on Vercel
+Example CSV format:
+```csv
+Category,Subcategory,PartNumber,DatasheetURL,Attribute1,Attribute2,Attribute3
+Category1,SubCat1,PART001,http://example.com,Yes,,Yes
+Category1,SubCat1,PART002,http://example.com,-,Yes,
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Development
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Frontend: The application uses Next.js with TypeScript and Tailwind CSS
+- Backend: Next.js API routes with Prisma for database operations
+- Database: PostgreSQL hosted on NeonDB
+- State Management: React hooks for local state management
+
+## License
+
+MIT

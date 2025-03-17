@@ -1,0 +1,4 @@
+Category,Subcategory,PartNumber,DatasheetURL,VDSSV,VGSV,VTHMinV
+Mosfet,SOT-23,TEST001,https://example.com/test001.pdf,12,5,0.8
+Mosfet,SOT-23,TEST002,https://example.com/test002.pdf,20,-,
+Capacitor,SMD,TEST003,https://example.com/test003.pdf,,,, 

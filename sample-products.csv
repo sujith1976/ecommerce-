@@ -1,0 +1,8 @@
+Category,Subcategory,PartNumber,DatasheetURL,Voltage,Current,Power,Efficiency,Temperature
+Power Supplies,AC-DC Converters,PS001,https://example.com/datasheets/PS001.pdf,12V,2A,24W,90%,
+Power Supplies,AC-DC Converters,PS002,https://example.com/datasheets/PS002.pdf,5V,3A,15W,-,
+Power Supplies,DC-DC Converters,PS003,https://example.com/datasheets/PS003.pdf,3.3V,1A,3.3W,,80C
+Connectors,USB,CN001,https://example.com/datasheets/CN001.pdf,5V,,,,-
+Connectors,HDMI,CN002,https://example.com/datasheets/CN002.pdf,,,,,-
+Sensors,Temperature,SN001,https://example.com/datasheets/SN001.pdf,,,,,100C
+Sensors,Humidity,SN002,https://example.com/datasheets/SN002.pdf,3.3V,0.1A,,-, 
