@@ -10,6 +10,8 @@
   NODE_VERSION = "18"
   NPM_VERSION = "9"
   GO_VERSION = ""
+  NODE_ENV = "production"
+  NEXT_TELEMETRY_DISABLED = "1"
 
 [[redirects]]
   from = "/*"
