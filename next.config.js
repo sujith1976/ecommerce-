@@ -5,6 +5,7 @@ const path = require('path');
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+  transpilePackages: ['@babel/runtime'],
   webpack: (config) => {
     config.resolve.alias = {
       ...config.resolve.alias,

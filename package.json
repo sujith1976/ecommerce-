@@ -12,6 +12,7 @@
     "db:studio": "prisma studio"
   },
   "dependencies": {
+    "@babel/runtime": "^7.26.10",
     "@netlify/plugin-nextjs": "^4.41.3",
     "@prisma/client": "^5.10.2",
     "@tanstack/react-table": "^8.21.2",
