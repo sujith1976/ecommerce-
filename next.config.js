@@ -1,5 +1,5 @@
+/* eslint-disable */
 /** @type {import('next').NextConfig} */
-// eslint-disable-next-line import/no-commonjs
 const path = require('path');
 
 const nextConfig = {
